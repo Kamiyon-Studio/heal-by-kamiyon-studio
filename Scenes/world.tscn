@@ -1,11 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbome0huhqj5l"]
+[gd_scene load_steps=6 format=3 uid="uid://cbome0huhqj5l"]
 
 [ext_resource type="Script" uid="uid://c6rclf535b063" path="res://Scripts/world.gd" id="1_go701"]
 [ext_resource type="Script" uid="uid://bw0niouyvn8o7" path="res://Scripts/camera_2d.gd" id="2_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://cpd5rigfvjgfw" path="res://Scenes/player.tscn" id="3_5a7ea"]
+[ext_resource type="Texture2D" uid="uid://bys4bdnaott3j" path="res://icon.svg" id="4_8j60k"]
 
-[node name="World" type="Node2D" node_paths=PackedStringArray("camera_2d")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j60k"]
+size = Vector2(1560, 134)
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("player", "camera_2d")]
 script = ExtResource("1_go701")
+player = NodePath("Player")
 camera_2d = NodePath("Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_5a7ea")
+
+[node name="Player" parent="." instance=ExtResource("3_5a7ea")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(45, 221)
+shape = SubResource("RectangleShape2D_8j60k")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(248, 88)
+texture = ExtResource("4_8j60k")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(250, -43)
+texture = ExtResource("4_8j60k")

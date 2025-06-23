@@ -46,6 +46,7 @@ camera_2d = NodePath("Camera2D")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 limit_left = 10
+limit_top = -14120
 limit_right = 11500
 limit_bottom = 700
 limit_smoothed = true
@@ -54,7 +55,7 @@ ceiling_position = Vector2(5000, -10000)
 
 [node name="Player" parent="." instance=ExtResource("3_5a7ea")]
 z_index = 2
-position = Vector2(2767, -5318)
+position = Vector2(1151, -13477)
 jump_velocity = -1000.0
 start_x = 100.0
 end_x = 9300.0
@@ -94,6 +95,18 @@ one_way_collision = true
 
 [node name="Island2" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
 polygon = PackedVector2Array(-764.667, 587.333, -843.333, 575, -911, 558.667, -1004.33, 565.667, -1049.33, 574.333, -1097.67, 593.333, -1122.67, 591.667, -1177, 599.333, -1250.67, 621.667, -1365.67, 608, -1424.33, 615, -1519.67, 621, -1566.33, 620.667, -1551, 735.667, -1403, 704.333, -1312, 692.667, -1207.33, 666.667, -1162.33, 657.333, -1100.33, 640.667, -1025, 639, -986, 615.667, -921.333, 615, -835.667, 621.667, -770.667, 621)
+one_way_collision = true
+
+[node name="Island3" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
+polygon = PackedVector2Array(577, 416, 494, 393, 395, 314, 359, 247, 373, 197, 430, 161, 501, 165, 535, 145, 604, 129, 670, 128, 722, 125, 762, 115, 840, 114, 953, 104, 988, 115, 1037, 112, 1074, 124, 1119, 169, 1167, 249, 1093, 333, 969, 387, 816, 381, 688, 422)
+one_way_collision = true
+
+[node name="Island4" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
+polygon = PackedVector2Array(-105, -530.667, -223, -552.667, -396.667, -527.333, -560, -505.333, -752, -535.667, -952.667, -537.333, -1099, -520.333, -1272.67, -559.333, -1340, -498.667, -1293, -424.333, -1193.67, -340.333, -1082.33, -326.667, -924, -412.667, -767.333, -438, -674.667, -404.333, -553.333, -439.667, -425.333, -448, -354.333, -478.333, -278.667, -476.667)
+one_way_collision = true
+
+[node name="Island5" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
+polygon = PackedVector2Array(1018.33, -629.333, 1071.33, -651.333, 1151.67, -626, 1235.67, -612.333, 1359, -620.333, 1464.67, -635.333, 1583.33, -639.667, 1677.67, -650, 1738.67, -625, 1753.67, -529.333, 1677.67, -431.667, 1397, -387.667, 1196.67, -398, 1042.33, -468.333, 977, -578.667)
 one_way_collision = true
 
 [node name="Floors" type="Node2D" parent="Env"]
@@ -216,9 +229,15 @@ one_way_collision = true
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
 polygon = PackedVector2Array(1424, -897, 1219.33, -991.667, 1128, -1065, 1023.33, -1117, 934, -1040.67, 717, -1003.33, 419.667, -1005.67, 291.667, -1208, 437.333, -1212, 591.667, -1189.33, 788, -1172.67, 930.667, -1169, 1024, -1128.33, 1084.67, -1099.67, 1165, -1049.67, 1234.33, -1005.33, 1374.33, -933, 1418.33, -919, 1446, -900, 1473.67, -881.667, 1458, -875.667)
 
-[node name="Ladder-end" type="Sprite2D" parent="Env/Ladder"]
+[node name="EndLadder" type="StaticBody2D" parent="Env/Ladder"]
+
+[node name="Ladder-end" type="Sprite2D" parent="Env/Ladder/EndLadder"]
 position = Vector2(357.333, -3578)
 texture = ExtResource("17_axeuq")
+
+[node name="LadderEnd" type="CollisionPolygon2D" parent="Env/Ladder/EndLadder"]
+polygon = PackedVector2Array(466.333, -3034, 251.333, -2974.67, 227.333, -3026.67, 258.667, -3234.33, 290.333, -3440, 305, -3706.67, 338.333, -3966.33, 312.333, -4123.67, 333, -4287, 353.333, -4240.67, 433, -4244.33, 353.333, -4214.67, 340.333, -4129.33, 447.667, -4131.33, 336.667, -4099.67, 351.333, -3997.67, 464.333, -4003.33, 453.333, -3981, 360.667, -3970, 357, -3742, 414.333, -3762.33, 468.333, -3736.33, 347.667, -3710.33, 323.667, -3456.67, 418, -3477, 468.333, -3473.33, 509, -3443.67, 327.333, -3421.33, 292, -3217.33, 392.333, -3247, 486.667, -3252.67, 475.667, -3226.67, 286.667, -3178.67, 257, -3004.33, 353.333, -3036)
+one_way_collision = true
 
 [node name="Triggers" type="Node2D" parent="."]
 
@@ -227,6 +246,15 @@ position = Vector2(9703, -542)
 camera_2d = NodePath("../../Camera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/CameraWide"]
+position = Vector2(-21, 120)
+shape = SubResource("RectangleShape2D_0pcbe")
+
+[node name="CameraWide2" parent="Triggers" node_paths=PackedStringArray("camera_2d", "player") instance=ExtResource("17_t2t4p")]
+position = Vector2(9703, -542)
+camera_2d = NodePath("../../Camera2D")
+player = NodePath("../../Player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/CameraWide2"]
 position = Vector2(-21, 120)
 shape = SubResource("RectangleShape2D_0pcbe")
 
@@ -245,7 +273,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="CameraWide3" parent="Triggers" node_paths=PackedStringArray("camera_2d", "player") instance=ExtResource("17_t2t4p")]
-position = Vector2(2244, -5183)
+position = Vector2(1199, -12827)
 camera_2d = NodePath("../../Camera2D")
 player = NodePath("../../Player")
 
@@ -259,7 +287,7 @@ player = NodePath("../../Player")
 player_scale = Vector2(7, 7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/player_enlarge"]
-position = Vector2(7123, -1433)
+position = Vector2(9611, -759)
 shape = SubResource("RectangleShape2D_axeuq")
 
 [node name="LeapOfFaith" type="Area2D" parent="Triggers" node_paths=PackedStringArray("player")]

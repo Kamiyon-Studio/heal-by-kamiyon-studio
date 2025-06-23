@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmctfjoll17tu"
-path="res://.godot/imported/floor-layer2.png-0b514698ade86302096faa852ed517f2.ctex"
+uid="uid://c6acslggoqpiv"
+path="res://.godot/imported/ladder-top.png-070cc92e3844d4a2d33091a3d8b8d37e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/env/floor-layer2.png"
-dest_files=["res://.godot/imported/floor-layer2.png-0b514698ade86302096faa852ed517f2.ctex"]
+source_file="res://Assets/env/ladders/ladder-top.png"
+dest_files=["res://.godot/imported/ladder-top.png-070cc92e3844d4a2d33091a3d8b8d37e.ctex"]
 
 [params]
 

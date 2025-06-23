@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3rgsqr52row2"
-path="res://.godot/imported/ladder2.png-9d61d9653510d6af127b4edb64ba6fa1.ctex"
+uid="uid://b6snvor21w62d"
+path="res://.godot/imported/grass-top-layer.png-cdc73c1ee97fa5a9b4eab688af4b6b0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/env/ladder2.png"
-dest_files=["res://.godot/imported/ladder2.png-9d61d9653510d6af127b4edb64ba6fa1.ctex"]
+source_file="res://Assets/env/grass overlay/grass-top-layer.png"
+dest_files=["res://.godot/imported/grass-top-layer.png-cdc73c1ee97fa5a9b4eab688af4b6b0b.ctex"]
 
 [params]
 

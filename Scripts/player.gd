@@ -14,33 +14,43 @@ const ACCELERATION: float = 10.0
 const FRICTION: float = 7.0
 const ROTATION_SPEED: float = 7.0
 
+var large_to_small: bool = false
+var can_move: bool = true
+
 
 # control player
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if can_move:
+		#print("Player scale:", self.scale)
+		# Add the gravity.
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
+		# Handle jump.
+		if Input.is_action_just_pressed("jump") and is_on_floor():
+			velocity.y = jump_velocity
 
 
-	var direction := Input.get_axis("left", "right")
-	if direction:
-		speed = min(speed + ACCELERATION, MAX_SPEED)
-		velocity.x = direction * speed
-	else:
-		speed = 5
-		velocity.x = move_toward(velocity.x, 0, FRICTION)
-	
-	# Rotation (like a rolling ball)
-	if velocity.x != 0:
-		rotation += sign(velocity.x) * ROTATION_SPEED * (abs(velocity.x) / MAX_SPEED) * delta
+		var direction := Input.get_axis("left", "right")
+		if direction:
+			speed = min(speed + ACCELERATION, MAX_SPEED)
+			velocity.x = direction * speed
+		else:
+			speed = 5
+			velocity.x = move_toward(velocity.x, 0, FRICTION)
 		
-	move_and_slide()
+		# Rotation (like a rolling ball)
+		if velocity.x != 0:
+			rotation += sign(velocity.x) * ROTATION_SPEED * (abs(velocity.x) / MAX_SPEED) * delta
+			
+		move_and_slide()
+	else:
+		velocity = Vector2.ZERO
 
 # change player size
 func _process(_delta: float) -> void:
-	var t: float = clamp((global_position.x - start_x) / (end_x - start_x), 0.0, 1.0)
-	scale = start_scale.lerp(end_scale, t)
+	if not large_to_small:
+		var t: float = clamp((global_position.x - start_x) / (end_x - start_x), 0.0, 1.0)
+		scale = start_scale.lerp(end_scale, t)
+	else:
+		pass

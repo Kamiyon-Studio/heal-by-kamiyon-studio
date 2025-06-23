@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqcbg7nhcl2rs"
-path="res://.godot/imported/layer-(background-grass).png-43c1a88a619cb4ae3b6e41831ac4bf90.ctex"
+uid="uid://sa7xfrwxh33m"
+path="res://.godot/imported/ladder-end.png-dc9512fa960d145e8b4e182f5e01ae3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/env/layer-(background-grass).png"
-dest_files=["res://.godot/imported/layer-(background-grass).png-43c1a88a619cb4ae3b6e41831ac4bf90.ctex"]
+source_file="res://Assets/env/ladders/ladder-end.png"
+dest_files=["res://.godot/imported/ladder-end.png-dc9512fa960d145e8b4e182f5e01ae3d.ctex"]
 
 [params]
 

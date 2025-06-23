@@ -30,7 +30,6 @@ func _on_timer_timeout():
 		print("timer ends - camera move!")
 		player.can_move = false
 		camera_2d.move_slowly_to_ceiling(5.0)
-		await camera_2d
 		print("camera move - finish!")
 		
 		camera_2d.is_locked_to_ceiling = false

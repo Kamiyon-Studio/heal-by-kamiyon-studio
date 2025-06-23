@@ -7,9 +7,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		# Force zoom to match what it would be if player.scale = 3.0
 		camera_2d.base_zoom = Vector2(0.2, 0.2)
-		var camera_scale = player.scale - Vector2(2.0,2.0)
-		camera_2d.reference_scale = camera_scale
-		print("camera scale:", camera_scale)
+		camera_2d.reference_scale = Vector2(2.0, 2.0)
 		print("zoom out!")
 
 func _on_body_exited(body: Node2D) -> void:

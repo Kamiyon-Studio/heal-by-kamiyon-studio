@@ -21,7 +21,7 @@ var can_move: bool = true
 # control player
 func _physics_process(delta: float) -> void:
 	if can_move:
-		#print("Player scale:", self.scale)
+		print("Player scale:", self.scale)
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta

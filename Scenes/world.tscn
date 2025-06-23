@@ -46,6 +46,7 @@ camera_2d = NodePath("Camera2D")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 limit_left = 10
+limit_top = -14120
 limit_right = 11500
 limit_bottom = 700
 limit_smoothed = true
@@ -54,11 +55,11 @@ ceiling_position = Vector2(5000, -10000)
 
 [node name="Player" parent="." instance=ExtResource("3_5a7ea")]
 z_index = 2
-position = Vector2(2807, -5682)
+position = Vector2(1151, -13477)
 jump_velocity = -1000.0
 start_x = 100.0
 end_x = 9300.0
-start_scale = Vector2(6, 6)
+start_scale = Vector2(7, 7)
 end_scale = Vector2(3, 3)
 
 [node name="Env" type="Node2D" parent="."]
@@ -85,7 +86,7 @@ texture = ExtResource("5_hgpy0")
 position = Vector2(1920, -1825)
 
 [node name="BotCollisionPolygon2D" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
-polygon = PackedVector2Array(-1919.67, 2227.67, -1890.67, 2249.33, -1845.67, 2251, -1787.33, 2240.67, -1721, 2236.33, -1689, 2243.67, -1663.33, 2231.33, -1629.67, 2230.33, -1609.67, 2235.67, -1559.67, 2256.67, -1518.33, 2280.67, -1497.67, 2278.67, -1461.67, 2275.33, -1424, 2295.33, -1351.33, 2292, -1314.33, 2275, -1245.33, 2257.67, -1165, 2260.67, -1133.33, 2243.67, -1094.33, 2234, -1063.33, 2226, -973.667, 2235, -938.667, 2253, -890.667, 2238.67, -831, 2230.33, -773.667, 2226, -719, 2237.33, -677, 2258.33, -603.667, 2270.33, -524.333, 2281.67, -499.333, 2279.67, -460.333, 2278.33, -416.333, 2265.67, -357.333, 2236.33, -304, 2234, -256.667, 2221.67, -220.667, 2234.33, -194, 2264, -148.667, 2275.33, -85.6666, 2294, -46.6666, 2309.67, 8, 2359.67, 38, 2369.33, 101.667, 2366, 151, 2352.33, 223, 2323.67, 302, 2328.67, 331.333, 2328.67, 370.667, 2317.67, 411.333, 2315.33, 445, 2294.33, 505.333, 2272, 527.333, 2250, 594.333, 2215.33, 653.333, 2217.67, 689.667, 2244, 874, 2262, 981, 2232, 1065.33, 2191.33, 1139.67, 2159.67, 1174.67, 2098.33, 1232, 2082.67, 1285.33, 2072, 1359.33, 2079.67, 1400.33, 2092.67, 1404.67, 2124.33, 1456.67, 2169, 1486.33, 2170, 1552.67, 2165.33, 1613, 2156.33, 1688.33, 2149, 1640.33, 2170, 1526, 2191, 1364.67, 2199.33, 1260.33, 2203.33, 1122.33, 2247, 1004, 2295.33, 852, 2361, 815, 2405.67, 877.667, 2438, 1150.33, 2369.67, 1273, 2381, 1316, 2352.33, 1364.33, 2331.33, 1434.67, 2326.67, 1501.33, 2347.67, 1561.33, 2357, 1609.67, 2333.33, 1649.33, 2289.33, 1684.67, 2248.67, 1771.33, 2211.67, 1842, 2200, 1919.67, 2212.67, 1922.33, 2472.67, -1920.67, 2475.33)
+polygon = PackedVector2Array(-1919.67, 2227.67, -1890.67, 2249.33, -1845.67, 2251, -1787.33, 2240.67, -1721, 2236.33, -1689, 2243.67, -1663.33, 2231.33, -1629.67, 2230.33, -1609.67, 2235.67, -1559.67, 2256.67, -1518.33, 2280.67, -1497.67, 2278.67, -1461.67, 2275.33, -1424, 2295.33, -1351.33, 2292, -1314.33, 2275, -1245.33, 2257.67, -1165, 2260.67, -1133.33, 2243.67, -1094.33, 2234, -1063.33, 2226, -973.667, 2235, -938.667, 2253, -890.667, 2238.67, -831, 2230.33, -773.667, 2226, -719, 2237.33, -677, 2258.33, -603.667, 2270.33, -524.333, 2281.67, -499.333, 2279.67, -460.333, 2278.33, -416.333, 2265.67, -357.333, 2236.33, -304, 2234, -256.667, 2221.67, -220.667, 2234.33, -194, 2264, -148.667, 2275.33, -85.6666, 2294, -46.6666, 2309.67, 8, 2359.67, 38, 2369.33, 101.667, 2366, 151, 2352.33, 223, 2323.67, 302, 2328.67, 331.333, 2328.67, 370.667, 2317.67, 411.333, 2315.33, 445, 2294.33, 505.333, 2272, 527.333, 2250, 594.333, 2215.33, 653.333, 2217.67, 689.667, 2244, 874, 2262, 933, 2237, 1023.67, 2204.67, 1098.33, 2153.67, 1174.67, 2098.33, 1232, 2082.67, 1285.33, 2072, 1359.33, 2079.67, 1400.33, 2092.67, 1404.67, 2124.33, 1456.67, 2169, 1486.33, 2170, 1552.67, 2165.33, 1613, 2156.33, 1688.33, 2149, 1640.33, 2170, 1526, 2191, 1364.67, 2199.33, 1260.33, 2203.33, 1122.33, 2247, 1004, 2295.33, 852, 2361, 815, 2405.67, 877.667, 2438, 1150.33, 2369.67, 1273, 2381, 1316, 2352.33, 1364.33, 2331.33, 1434.67, 2326.67, 1501.33, 2347.67, 1561.33, 2357, 1609.67, 2333.33, 1649.33, 2289.33, 1684.67, 2248.67, 1771.33, 2211.67, 1842, 2200, 1919.67, 2212.67, 1922.33, 2472.67, -1920.67, 2475.33)
 one_way_collision = true
 
 [node name="Island1" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
@@ -94,6 +95,18 @@ one_way_collision = true
 
 [node name="Island2" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
 polygon = PackedVector2Array(-764.667, 587.333, -843.333, 575, -911, 558.667, -1004.33, 565.667, -1049.33, 574.333, -1097.67, 593.333, -1122.67, 591.667, -1177, 599.333, -1250.67, 621.667, -1365.67, 608, -1424.33, 615, -1519.67, 621, -1566.33, 620.667, -1551, 735.667, -1403, 704.333, -1312, 692.667, -1207.33, 666.667, -1162.33, 657.333, -1100.33, 640.667, -1025, 639, -986, 615.667, -921.333, 615, -835.667, 621.667, -770.667, 621)
+one_way_collision = true
+
+[node name="Island3" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
+polygon = PackedVector2Array(577, 416, 494, 393, 395, 314, 359, 247, 373, 197, 430, 161, 501, 165, 535, 145, 604, 129, 670, 128, 722, 125, 762, 115, 840, 114, 953, 104, 988, 115, 1037, 112, 1074, 124, 1119, 169, 1167, 249, 1093, 333, 969, 387, 816, 381, 688, 422)
+one_way_collision = true
+
+[node name="Island4" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
+polygon = PackedVector2Array(-105, -530.667, -223, -552.667, -396.667, -527.333, -560, -505.333, -752, -535.667, -952.667, -537.333, -1099, -520.333, -1272.67, -559.333, -1340, -498.667, -1293, -424.333, -1193.67, -340.333, -1082.33, -326.667, -924, -412.667, -767.333, -438, -674.667, -404.333, -553.333, -439.667, -425.333, -448, -354.333, -478.333, -278.667, -476.667)
+one_way_collision = true
+
+[node name="Island5" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
+polygon = PackedVector2Array(1018.33, -629.333, 1071.33, -651.333, 1151.67, -626, 1235.67, -612.333, 1359, -620.333, 1464.67, -635.333, 1583.33, -639.667, 1677.67, -650, 1738.67, -625, 1753.67, -529.333, 1677.67, -431.667, 1397, -387.667, 1196.67, -398, 1042.33, -468.333, 977, -578.667)
 one_way_collision = true
 
 [node name="Floors" type="Node2D" parent="Env"]
@@ -176,50 +189,55 @@ polygon = PackedVector2Array(2618, -537.667, 2555.33, -571.333, 2558.67, -615.66
 one_way_collision = true
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(2472, -588, 2488, -616.667, 2476, -620.667, 2462.67, -624, 2446, -608, 2444, -580.667)
+polygon = PackedVector2Array(2488, -616.667, 2462.67, -624, 2444.67, -586.667, 2474, -584)
 one_way_collision = true
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
 position = Vector2(7, 4.66666)
-polygon = PackedVector2Array(2362.67, -600.333, 2369.33, -621.667, 2382, -643, 2365.33, -652, 2344.67, -636, 2342, -602.333)
+polygon = PackedVector2Array(2378, -639.667, 2355.33, -644, 2327.33, -610.667, 2366.33, -604.667)
 one_way_collision = true
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
 position = Vector2(7, 4.66666)
-polygon = PackedVector2Array(2244.67, -632, 2244, -650.667, 2261.33, -664, 2241.33, -668.333, 2228, -654, 2214, -631.667)
+polygon = PackedVector2Array(2284.33, -666, 2258, -673.667, 2228, -635, 2252.33, -626.667)
 one_way_collision = true
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(2115.33, -635.333, 2115.67, -654, 2132, -678.333, 2115, -682.667, 2102.33, -671, 2094.33, -650.333, 2090, -635.333)
+polygon = PackedVector2Array(2133.67, -678, 2114.33, -685.333, 2087, -639.667, 2106.67, -637)
 one_way_collision = true
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1980.67, -664.667, 1981.33, -692, 1995.67, -705.333, 1980.67, -705.667, 1973.67, -716.667, 1964, -692.333, 1945.67, -680.667)
+polygon = PackedVector2Array(1998, -710.667, 1971.67, -717.667, 1942, -681.333, 1958.67, -671)
 one_way_collision = true
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1857.33, -706, 1859.33, -728.333, 1867, -742.667, 1850.67, -746.333, 1845.33, -729.667, 1824.33, -714.667)
+polygon = PackedVector2Array(1867, -742.667, 1850.67, -746.333, 1824.33, -714.667)
 one_way_collision = true
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1762.67, -760.333, 1776.67, -775.667, 1764.33, -776.667, 1752.33, -782, 1738, -772.333, 1731.33, -742, 1774.33, -728.333)
+polygon = PackedVector2Array(1776.67, -775.667, 1752.33, -782, 1731.33, -742)
 one_way_collision = true
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1634.67, -792.667, 1640, -811.667, 1647.67, -826.333, 1621, -830.333, 1607.67, -810.667, 1608.67, -798.333)
+polygon = PackedVector2Array(1647.67, -826.333, 1621, -830.333, 1608.67, -798.333)
 one_way_collision = true
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1527.33, -823, 1531.33, -847.333, 1537.67, -862.667, 1516.67, -871, 1499, -854, 1494.33, -832, 1532, -819)
+polygon = PackedVector2Array(1537.67, -862.667, 1516.67, -871, 1494.33, -832)
 one_way_collision = true
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
 polygon = PackedVector2Array(1424, -897, 1219.33, -991.667, 1128, -1065, 1023.33, -1117, 934, -1040.67, 717, -1003.33, 419.667, -1005.67, 291.667, -1208, 437.333, -1212, 591.667, -1189.33, 788, -1172.67, 930.667, -1169, 1024, -1128.33, 1084.67, -1099.67, 1165, -1049.67, 1234.33, -1005.33, 1374.33, -933, 1418.33, -919, 1446, -900, 1473.67, -881.667, 1458, -875.667)
-one_way_collision = true
 
-[node name="Ladder-end" type="Sprite2D" parent="Env/Ladder"]
+[node name="EndLadder" type="StaticBody2D" parent="Env/Ladder"]
+
+[node name="Ladder-end" type="Sprite2D" parent="Env/Ladder/EndLadder"]
 position = Vector2(357.333, -3578)
 texture = ExtResource("17_axeuq")
+
+[node name="LadderEnd" type="CollisionPolygon2D" parent="Env/Ladder/EndLadder"]
+polygon = PackedVector2Array(466.333, -3034, 251.333, -2974.67, 227.333, -3026.67, 258.667, -3234.33, 290.333, -3440, 305, -3706.67, 338.333, -3966.33, 312.333, -4123.67, 333, -4287, 353.333, -4240.67, 433, -4244.33, 353.333, -4214.67, 340.333, -4129.33, 447.667, -4131.33, 336.667, -4099.67, 351.333, -3997.67, 464.333, -4003.33, 453.333, -3981, 360.667, -3970, 357, -3742, 414.333, -3762.33, 468.333, -3736.33, 347.667, -3710.33, 323.667, -3456.67, 418, -3477, 468.333, -3473.33, 509, -3443.67, 327.333, -3421.33, 292, -3217.33, 392.333, -3247, 486.667, -3252.67, 475.667, -3226.67, 286.667, -3178.67, 257, -3004.33, 353.333, -3036)
+one_way_collision = true
 
 [node name="Triggers" type="Node2D" parent="."]
 
@@ -228,6 +246,15 @@ position = Vector2(9703, -542)
 camera_2d = NodePath("../../Camera2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/CameraWide"]
+position = Vector2(-21, 120)
+shape = SubResource("RectangleShape2D_0pcbe")
+
+[node name="CameraWide2" parent="Triggers" node_paths=PackedStringArray("camera_2d", "player") instance=ExtResource("17_t2t4p")]
+position = Vector2(9703, -542)
+camera_2d = NodePath("../../Camera2D")
+player = NodePath("../../Player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/CameraWide2"]
 position = Vector2(-21, 120)
 shape = SubResource("RectangleShape2D_0pcbe")
 
@@ -246,7 +273,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="CameraWide3" parent="Triggers" node_paths=PackedStringArray("camera_2d", "player") instance=ExtResource("17_t2t4p")]
-position = Vector2(2244, -5183)
+position = Vector2(1199, -12827)
 camera_2d = NodePath("../../Camera2D")
 player = NodePath("../../Player")
 
@@ -260,21 +287,18 @@ player = NodePath("../../Player")
 player_scale = Vector2(7, 7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/player_enlarge"]
-position = Vector2(7150, -1414)
+position = Vector2(9611, -759)
 shape = SubResource("RectangleShape2D_axeuq")
 
-[node name="Camera2D2" type="Camera2D" parent="."]
-position = Vector2(5760, -10625)
-
-[node name="LeapOfFaith" type="Area2D" parent="." node_paths=PackedStringArray("player")]
+[node name="LeapOfFaith" type="Area2D" parent="Triggers" node_paths=PackedStringArray("player")]
 position = Vector2(9682, -683)
 script = ExtResource("22_pyn1s")
-player = NodePath("../Player")
+player = NodePath("../../Player")
 player_jump = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeapOfFaith"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/LeapOfFaith"]
 position = Vector2(-9, -461)
 shape = SubResource("RectangleShape2D_yq1aw")
 
 [connection signal="timeout" from="Triggers/CameraToCeiling/Timer" to="Triggers/CameraToCeiling" method="_on_timer_timeout"]
-[connection signal="body_entered" from="LeapOfFaith" to="LeapOfFaith" method="_on_body_entered"]
+[connection signal="body_entered" from="Triggers/LeapOfFaith" to="Triggers/LeapOfFaith" method="_on_body_entered"]

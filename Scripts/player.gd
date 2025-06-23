@@ -41,6 +41,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 # change player size
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var t: float = clamp((global_position.x - start_x) / (end_x - start_x), 0.0, 1.0)
 	scale = start_scale.lerp(end_scale, t)

@@ -1,7 +1,8 @@
 extends Camera2D
 
+@onready var player: CharacterBody2D = $"../Player"
 
-@export var player: CharacterBody2D 
+
 @export var zone_size: Vector2 = Vector2(1280, 720) # size of one "screen" or section
 @export var base_zoom: Vector2 = Vector2(1.0, 1.0)
 @export var reference_scale: Vector2 = Vector2(1.0, 1.0)

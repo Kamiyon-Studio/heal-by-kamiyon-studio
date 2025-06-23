@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b475hodq35ba6"]
+
+[ext_resource type="Script" uid="uid://bg465hollnpxk" path="res://Scripts/player_enlarge.gd" id="1_ipcj0"]
+
+[node name="player_enlarge" type="Area2D"]
+script = ExtResource("1_ipcj0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

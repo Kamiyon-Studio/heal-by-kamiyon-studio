@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbqk5n2ccpl5v"]
+
+[ext_resource type="Script" uid="uid://5nfmhp6nu5oe" path="res://Scripts/camera_wide.gd" id="1_jf7en"]
+
+[node name="CameraWide" type="Area2D"]
+script = ExtResource("1_jf7en")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

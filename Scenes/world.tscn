@@ -1,29 +1,42 @@
-[gd_scene load_steps=21 format=3 uid="uid://cbome0huhqj5l"]
+[gd_scene load_steps=27 format=3 uid="uid://cbome0huhqj5l"]
 
 [ext_resource type="Script" uid="uid://c6rclf535b063" path="res://Scripts/world.gd" id="1_go701"]
 [ext_resource type="Script" uid="uid://bw0niouyvn8o7" path="res://Scripts/camera_2d.gd" id="2_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://cpd5rigfvjgfw" path="res://Scenes/player.tscn" id="3_5a7ea"]
 [ext_resource type="Texture2D" uid="uid://c0puw8cf6q233" path="res://Assets/env/bg-layer-(main).png" id="4_kn0ld"]
 [ext_resource type="Texture2D" uid="uid://b0kuaw4scg835" path="res://Assets/env/bg-layer-(main-v2).png" id="5_hgpy0"]
-[ext_resource type="Texture2D" uid="uid://cb3a7cecprvwx" path="res://Assets/env/floor-layer1.png" id="6_t2t4p"]
-[ext_resource type="Texture2D" uid="uid://dmctfjoll17tu" path="res://Assets/env/floor-layer2.png" id="7_0pcbe"]
-[ext_resource type="Texture2D" uid="uid://8bra6rag823j" path="res://Assets/env/floor-layer3.png" id="8_axeuq"]
-[ext_resource type="Texture2D" uid="uid://dqcbg7nhcl2rs" path="res://Assets/env/layer-(background-grass).png" id="9_1cojt"]
-[ext_resource type="Texture2D" uid="uid://8w4tspacc3jt" path="res://Assets/env/layer-(top-layer-grass).png" id="10_yq1aw"]
-[ext_resource type="Texture2D" uid="uid://b6snvor21w62d" path="res://Assets/env/grass-top-layer.png" id="11_hgpy0"]
-[ext_resource type="Texture2D" uid="uid://byk3h35nvn2jr" path="res://Assets/env/ladder1.png" id="11_pyn1s"]
-[ext_resource type="Texture2D" uid="uid://b3rgsqr52row2" path="res://Assets/env/ladder2.png" id="12_no8kt"]
-[ext_resource type="Texture2D" uid="uid://daejmt8louesn" path="res://Assets/env/ladder3.png" id="13_xbk3s"]
-[ext_resource type="Texture2D" uid="uid://d33xkavr3qcdi" path="res://Assets/env/ladder4.png" id="14_i4fjy"]
-[ext_resource type="Texture2D" uid="uid://ceb4i7t5r3wqf" path="res://Assets/env/ladder5.png" id="15_pt3ps"]
+[ext_resource type="Texture2D" uid="uid://cb3a7cecprvwx" path="res://Assets/env/floors/floor-layer1.png" id="6_t2t4p"]
+[ext_resource type="Texture2D" uid="uid://dmctfjoll17tu" path="res://Assets/env/floors/floor-layer2.png" id="7_0pcbe"]
+[ext_resource type="Texture2D" uid="uid://8bra6rag823j" path="res://Assets/env/floors/floor-layer3.png" id="8_axeuq"]
+[ext_resource type="Texture2D" uid="uid://dqcbg7nhcl2rs" path="res://Assets/env/grass overlay/layer-(background-grass).png" id="9_1cojt"]
+[ext_resource type="Shader" uid="uid://jxjv8jhw2q30" path="res://grass.gdshader" id="10_pyn1s"]
+[ext_resource type="Texture2D" uid="uid://8w4tspacc3jt" path="res://Assets/env/grass overlay/layer-(top-layer-grass).png" id="10_yq1aw"]
+[ext_resource type="Texture2D" uid="uid://b6snvor21w62d" path="res://Assets/env/grass overlay/grass-top-layer.png" id="11_hgpy0"]
+[ext_resource type="Texture2D" uid="uid://byk3h35nvn2jr" path="res://Assets/env/ladders/ladder1.png" id="11_pyn1s"]
+[ext_resource type="Texture2D" uid="uid://b3rgsqr52row2" path="res://Assets/env/ladders/ladder2.png" id="12_no8kt"]
+[ext_resource type="Texture2D" uid="uid://daejmt8louesn" path="res://Assets/env/ladders/ladder3.png" id="13_xbk3s"]
+[ext_resource type="Texture2D" uid="uid://d33xkavr3qcdi" path="res://Assets/env/ladders/ladder4.png" id="14_i4fjy"]
+[ext_resource type="Texture2D" uid="uid://ceb4i7t5r3wqf" path="res://Assets/env/ladders/ladder5.png" id="15_pt3ps"]
+[ext_resource type="Texture2D" uid="uid://sa7xfrwxh33m" path="res://Assets/env/ladders/ladder-end.png" id="17_axeuq"]
 [ext_resource type="PackedScene" uid="uid://cbqk5n2ccpl5v" path="res://Scenes/camera_wide.tscn" id="17_t2t4p"]
 [ext_resource type="PackedScene" uid="uid://b475hodq35ba6" path="res://Scenes/player_enlarge.tscn" id="18_0pcbe"]
+[ext_resource type="Script" uid="uid://cqx2k1uj1m3q6" path="res://Scripts/Extend/camera_wide.gd" id="18_axeuq"]
+[ext_resource type="Script" uid="uid://b0qdifqx6qrnl" path="res://Scripts/leap_of_faith.gd" id="22_pyn1s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_no8kt"]
+shader = ExtResource("10_pyn1s")
+shader_parameter/sway_strength = 10.0
+shader_parameter/sway_speed = 2.0
+shader_parameter/sway_offset = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pcbe"]
 size = Vector2(698, 166)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axeuq"]
-size = Vector2(404, 35)
+size = Vector2(404, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq1aw"]
+size = Vector2(370, 142)
 
 [node name="World" type="Node2D" node_paths=PackedStringArray("player", "camera_2d")]
 script = ExtResource("1_go701")
@@ -37,11 +50,14 @@ limit_right = 11500
 limit_bottom = 700
 limit_smoothed = true
 script = ExtResource("2_5a7ea")
+ceiling_position = Vector2(5000, -10000)
 
 [node name="Player" parent="." instance=ExtResource("3_5a7ea")]
 z_index = 2
-position = Vector2(3679, -4481)
+position = Vector2(2807, -5682)
 jump_velocity = -1000.0
+start_x = 100.0
+end_x = 9300.0
 start_scale = Vector2(6, 6)
 end_scale = Vector2(3, 3)
 
@@ -57,11 +73,20 @@ polygon = PackedVector2Array(0, -4298.67, 0, 648.667, 3840, 648.333, 3839.67, -4
 [node name="BgLayer" type="Node2D" parent="Env"]
 metadata/_edit_lock_ = true
 
+[node name="Bg-layer-(main)" type="Sprite2D" parent="Env/BgLayer"]
+position = Vector2(1920, -1825)
+texture = ExtResource("4_kn0ld")
+
+[node name="Bg-layer-(main-v2)" type="Sprite2D" parent="Env/BgLayer"]
+position = Vector2(1920, -1825)
+texture = ExtResource("5_hgpy0")
+
 [node name="PlayerPath" type="StaticBody2D" parent="Env/BgLayer"]
 position = Vector2(1920, -1825)
 
 [node name="BotCollisionPolygon2D" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
-polygon = PackedVector2Array(-1923, 2478, -1919, 2261, -1902, 2246, -1861, 2259, -1823, 2238, -1781, 2245, -1739, 2235, -1696, 2219, -1620, 2235, -1586, 2256, -1521, 2226, -1472, 2248, -1451, 2277, -1373, 2274, -1302, 2242, -1216, 2208, -1182, 2230, -1118, 2203, -938, 2199, -804, 2179, -741, 2220, -609, 2299, -504, 2283, -384, 2240, -259, 2213, -152, 2272, -62, 2332, 43, 2368, 174, 2340, 294, 2340, 397, 2332, 472, 2310, 626, 2255, 817, 2238, 982, 2207, 1132, 2122, 1269, 2079, 1397, 2092, 1483, 2160, 1601, 2156, 1681, 2151, 1018, 2338, 1101, 2390, 1254, 2390, 1351, 2355, 1445, 2339, 1514, 2379, 1633, 2358, 1746, 2288, 1856, 2220, 1916, 2250, 1918, 2475)
+polygon = PackedVector2Array(-1919.67, 2227.67, -1890.67, 2249.33, -1845.67, 2251, -1787.33, 2240.67, -1721, 2236.33, -1689, 2243.67, -1663.33, 2231.33, -1629.67, 2230.33, -1609.67, 2235.67, -1559.67, 2256.67, -1518.33, 2280.67, -1497.67, 2278.67, -1461.67, 2275.33, -1424, 2295.33, -1351.33, 2292, -1314.33, 2275, -1245.33, 2257.67, -1165, 2260.67, -1133.33, 2243.67, -1094.33, 2234, -1063.33, 2226, -973.667, 2235, -938.667, 2253, -890.667, 2238.67, -831, 2230.33, -773.667, 2226, -719, 2237.33, -677, 2258.33, -603.667, 2270.33, -524.333, 2281.67, -499.333, 2279.67, -460.333, 2278.33, -416.333, 2265.67, -357.333, 2236.33, -304, 2234, -256.667, 2221.67, -220.667, 2234.33, -194, 2264, -148.667, 2275.33, -85.6666, 2294, -46.6666, 2309.67, 8, 2359.67, 38, 2369.33, 101.667, 2366, 151, 2352.33, 223, 2323.67, 302, 2328.67, 331.333, 2328.67, 370.667, 2317.67, 411.333, 2315.33, 445, 2294.33, 505.333, 2272, 527.333, 2250, 594.333, 2215.33, 653.333, 2217.67, 689.667, 2244, 874, 2262, 981, 2232, 1065.33, 2191.33, 1139.67, 2159.67, 1174.67, 2098.33, 1232, 2082.67, 1285.33, 2072, 1359.33, 2079.67, 1400.33, 2092.67, 1404.67, 2124.33, 1456.67, 2169, 1486.33, 2170, 1552.67, 2165.33, 1613, 2156.33, 1688.33, 2149, 1640.33, 2170, 1526, 2191, 1364.67, 2199.33, 1260.33, 2203.33, 1122.33, 2247, 1004, 2295.33, 852, 2361, 815, 2405.67, 877.667, 2438, 1150.33, 2369.67, 1273, 2381, 1316, 2352.33, 1364.33, 2331.33, 1434.67, 2326.67, 1501.33, 2347.67, 1561.33, 2357, 1609.67, 2333.33, 1649.33, 2289.33, 1684.67, 2248.67, 1771.33, 2211.67, 1842, 2200, 1919.67, 2212.67, 1922.33, 2472.67, -1920.67, 2475.33)
+one_way_collision = true
 
 [node name="Island1" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
 polygon = PackedVector2Array(1414.33, 1313, 958.667, 1378.67, 829, 1390.67, 712, 1359.33, 609.667, 1310.67, 646.667, 1249.67, 711.333, 1204, 804.667, 1205, 896, 1219.33, 965.333, 1207.67, 1045.33, 1205, 1114.67, 1214.33, 1216.33, 1261.33, 1277.67, 1248.33, 1290.67, 1207.67, 1419.33, 1190)
@@ -70,15 +95,6 @@ one_way_collision = true
 [node name="Island2" type="CollisionPolygon2D" parent="Env/BgLayer/PlayerPath"]
 polygon = PackedVector2Array(-764.667, 587.333, -843.333, 575, -911, 558.667, -1004.33, 565.667, -1049.33, 574.333, -1097.67, 593.333, -1122.67, 591.667, -1177, 599.333, -1250.67, 621.667, -1365.67, 608, -1424.33, 615, -1519.67, 621, -1566.33, 620.667, -1551, 735.667, -1403, 704.333, -1312, 692.667, -1207.33, 666.667, -1162.33, 657.333, -1100.33, 640.667, -1025, 639, -986, 615.667, -921.333, 615, -835.667, 621.667, -770.667, 621)
 one_way_collision = true
-
-[node name="Bg-layer-(main)" type="Sprite2D" parent="Env/BgLayer"]
-position = Vector2(1920, -1825)
-texture = ExtResource("4_kn0ld")
-
-[node name="Bg-layer-(main-v2)" type="Sprite2D" parent="Env/BgLayer"]
-visible = false
-position = Vector2(1920, -1825)
-texture = ExtResource("5_hgpy0")
 
 [node name="Floors" type="Node2D" parent="Env"]
 visible = false
@@ -103,17 +119,21 @@ z_index = 3
 position = Vector2(1920, -1825)
 texture = ExtResource("8_axeuq")
 
-[node name="Layer-(background-grass)" type="Sprite2D" parent="Env"]
+[node name="Grass" type="Node2D" parent="Env"]
+
+[node name="Layer-(background-grass)" type="Sprite2D" parent="Env/Grass"]
 z_index = 1
 position = Vector2(1920, -1825)
 texture = ExtResource("9_1cojt")
 
-[node name="Layer-(top-layer-grass)" type="Sprite2D" parent="Env"]
+[node name="Layer-(top-layer-grass)" type="Sprite2D" parent="Env/Grass"]
 z_index = 5
-position = Vector2(1920, -1825)
+material = SubResource("ShaderMaterial_no8kt")
+position = Vector2(1930.67, -1942)
+scale = Vector2(1.05729, 1.05729)
 texture = ExtResource("10_yq1aw")
 
-[node name="Island-grass-top-layer" type="Sprite2D" parent="Env"]
+[node name="Island-grass-top-layer" type="Sprite2D" parent="Env/Grass"]
 z_index = 5
 position = Vector2(1920, -1825)
 texture = ExtResource("11_hgpy0")
@@ -174,15 +194,15 @@ polygon = PackedVector2Array(2115.33, -635.333, 2115.67, -654, 2132, -678.333, 2
 one_way_collision = true
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1980.67, -664.667, 1981.33, -692, 1995.67, -705.333, 1980.67, -705.667, 1973.67, -716.667, 1962.67, -704.667, 1945.67, -680.667)
+polygon = PackedVector2Array(1980.67, -664.667, 1981.33, -692, 1995.67, -705.333, 1980.67, -705.667, 1973.67, -716.667, 1964, -692.333, 1945.67, -680.667)
 one_way_collision = true
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1857.33, -706, 1867.33, -731.667, 1862, -742.333, 1850.67, -746.333, 1840, -736.667, 1824.33, -714.667)
+polygon = PackedVector2Array(1857.33, -706, 1859.33, -728.333, 1867, -742.667, 1850.67, -746.333, 1845.33, -729.667, 1824.33, -714.667)
 one_way_collision = true
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1775, -734, 1782.33, -768.333, 1764.33, -776.667, 1752.33, -782, 1738, -772.333, 1731.33, -742, 1774.33, -728.333)
+polygon = PackedVector2Array(1762.67, -760.333, 1776.67, -775.667, 1764.33, -776.667, 1752.33, -782, 1738, -772.333, 1731.33, -742, 1774.33, -728.333)
 one_way_collision = true
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
@@ -197,33 +217,64 @@ one_way_collision = true
 polygon = PackedVector2Array(1424, -897, 1219.33, -991.667, 1128, -1065, 1023.33, -1117, 934, -1040.67, 717, -1003.33, 419.667, -1005.67, 291.667, -1208, 437.333, -1212, 591.667, -1189.33, 788, -1172.67, 930.667, -1169, 1024, -1128.33, 1084.67, -1099.67, 1165, -1049.67, 1234.33, -1005.33, 1374.33, -933, 1418.33, -919, 1446, -900, 1473.67, -881.667, 1458, -875.667)
 one_way_collision = true
 
-[node name="CameraWide" parent="." node_paths=PackedStringArray("camera_2d") instance=ExtResource("17_t2t4p")]
+[node name="Ladder-end" type="Sprite2D" parent="Env/Ladder"]
+position = Vector2(357.333, -3578)
+texture = ExtResource("17_axeuq")
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="CameraWide" parent="Triggers" node_paths=PackedStringArray("camera_2d") instance=ExtResource("17_t2t4p")]
 position = Vector2(9703, -542)
-camera_2d = NodePath("../Camera2D")
+camera_2d = NodePath("../../Camera2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraWide"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/CameraWide"]
 position = Vector2(-21, 120)
 shape = SubResource("RectangleShape2D_0pcbe")
 
-[node name="CameraWide2" parent="." node_paths=PackedStringArray("camera_2d") instance=ExtResource("17_t2t4p")]
+[node name="CameraToCeiling" parent="Triggers" node_paths=PackedStringArray("camera_2d", "player") instance=ExtResource("17_t2t4p")]
 position = Vector2(8861, -3249)
-camera_2d = NodePath("../Camera2D")
+script = ExtResource("18_axeuq")
+camera_2d = NodePath("../../Camera2D")
+player = NodePath("../../Player")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraWide2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/CameraToCeiling"]
 position = Vector2(-21, 120)
 shape = SubResource("RectangleShape2D_0pcbe")
 
-[node name="CameraWide3" parent="." node_paths=PackedStringArray("camera_2d") instance=ExtResource("17_t2t4p")]
+[node name="Timer" type="Timer" parent="Triggers/CameraToCeiling"]
+wait_time = 2.0
+one_shot = true
+
+[node name="CameraWide3" parent="Triggers" node_paths=PackedStringArray("camera_2d", "player") instance=ExtResource("17_t2t4p")]
 position = Vector2(2244, -5183)
-camera_2d = NodePath("../Camera2D")
+camera_2d = NodePath("../../Camera2D")
+player = NodePath("../../Player")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraWide3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/CameraWide3"]
 position = Vector2(-21, 120)
 shape = SubResource("RectangleShape2D_0pcbe")
 
-[node name="player_enlarge" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_0pcbe")]
-player = NodePath("../Player")
+[node name="player_enlarge" parent="Triggers" node_paths=PackedStringArray("player") instance=ExtResource("18_0pcbe")]
+position = Vector2(-3835, -3750)
+player = NodePath("../../Player")
+player_scale = Vector2(7, 7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player_enlarge"]
-position = Vector2(9697, -818.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/player_enlarge"]
+position = Vector2(7150, -1414)
 shape = SubResource("RectangleShape2D_axeuq")
+
+[node name="Camera2D2" type="Camera2D" parent="."]
+position = Vector2(5760, -10625)
+
+[node name="LeapOfFaith" type="Area2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(9682, -683)
+script = ExtResource("22_pyn1s")
+player = NodePath("../Player")
+player_jump = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeapOfFaith"]
+position = Vector2(-9, -461)
+shape = SubResource("RectangleShape2D_yq1aw")
+
+[connection signal="timeout" from="Triggers/CameraToCeiling/Timer" to="Triggers/CameraToCeiling" method="_on_timer_timeout"]
+[connection signal="body_entered" from="LeapOfFaith" to="LeapOfFaith" method="_on_body_entered"]

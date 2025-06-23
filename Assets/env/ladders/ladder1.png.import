@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d33xkavr3qcdi"
-path="res://.godot/imported/ladder4.png-d307829dc9adf91333b4cc2ae72cee76.ctex"
+uid="uid://byk3h35nvn2jr"
+path="res://.godot/imported/ladder1.png-1ec1bc217284c6c83c61662a6f6527a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/env/ladder4.png"
-dest_files=["res://.godot/imported/ladder4.png-d307829dc9adf91333b4cc2ae72cee76.ctex"]
+source_file="res://Assets/env/ladders/ladder1.png"
+dest_files=["res://.godot/imported/ladder1.png-1ec1bc217284c6c83c61662a6f6527a4.ctex"]
 
 [params]
 

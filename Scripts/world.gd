@@ -5,9 +5,9 @@ extends Node2D
 @export var background_music: AudioStreamPlayer2D 
 
 
-#func _ready() -> void:
+func _ready() -> void:
 	#background_music.play()
-
+	pass
 
 func _on_camera_up_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

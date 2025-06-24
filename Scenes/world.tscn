@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cbome0huhqj5l"]
+[gd_scene load_steps=29 format=3 uid="uid://cbome0huhqj5l"]
 
 [ext_resource type="Script" uid="uid://c6rclf535b063" path="res://Scripts/world.gd" id="1_go701"]
 [ext_resource type="Script" uid="uid://bw0niouyvn8o7" path="res://Scripts/camera_2d.gd" id="2_5a7ea"]
@@ -21,9 +21,16 @@
 [ext_resource type="PackedScene" uid="uid://cbqk5n2ccpl5v" path="res://Scenes/camera_wide.tscn" id="17_t2t4p"]
 [ext_resource type="PackedScene" uid="uid://b475hodq35ba6" path="res://Scenes/player_enlarge.tscn" id="18_0pcbe"]
 [ext_resource type="Script" uid="uid://cqx2k1uj1m3q6" path="res://Scripts/Extend/camera_wide.gd" id="18_axeuq"]
+[ext_resource type="Texture2D" uid="uid://c6acslggoqpiv" path="res://Assets/env/ladders/ladder-top.png" id="19_no8kt"]
 [ext_resource type="Script" uid="uid://b0qdifqx6qrnl" path="res://Scripts/leap_of_faith.gd" id="22_pyn1s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_no8kt"]
+shader = ExtResource("10_pyn1s")
+shader_parameter/sway_strength = 10.0
+shader_parameter/sway_speed = 2.0
+shader_parameter/sway_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pyn1s"]
 shader = ExtResource("10_pyn1s")
 shader_parameter/sway_strength = 10.0
 shader_parameter/sway_speed = 2.0
@@ -55,9 +62,10 @@ ceiling_position = Vector2(5000, -10000)
 
 [node name="Player" parent="." instance=ExtResource("3_5a7ea")]
 z_index = 2
-position = Vector2(1151, -13477)
+position = Vector2(428, -1144)
+speed = 100.0
 jump_velocity = -1000.0
-start_x = 100.0
+start_x = 200.0
 end_x = 9300.0
 start_scale = Vector2(7, 7)
 end_scale = Vector2(3, 3)
@@ -148,6 +156,7 @@ texture = ExtResource("10_yq1aw")
 
 [node name="Island-grass-top-layer" type="Sprite2D" parent="Env/Grass"]
 z_index = 5
+material = SubResource("ShaderMaterial_pyn1s")
 position = Vector2(1920, -1825)
 texture = ExtResource("11_hgpy0")
 
@@ -163,71 +172,71 @@ texture = ExtResource("11_pyn1s")
 polygon = PackedVector2Array(3055.33, -573.667, 3057.67, -587.667, 3098.67, -583.333, 3128, -577, 3137, -560, 3143.67, -545.333, 3148.33, -527.333, 3151, -504.667, 3154.33, -467.667, 3157.33, -447.333, 3201.33, -461.667, 3237.67, -459, 3236.33, -440.333, 3208.33, -443.333, 3157.33, -428.667, 3151, -413.667, 3150.33, -369, 3154.67, -352, 3194.67, -351.667, 3242, -363.667, 3245.67, -334.333, 3200.33, -335.667, 3160.33, -333, 3164, -283.333, 3166.67, -251, 3176.67, -235.667, 3217.67, -253.333, 3250.33, -251.667, 3269, -238, 3267, -218.333, 3224, -227.667, 3173.33, -213, 3171.33, -187, 3172, -150.333, 3180.67, -116.667, 3222.67, -132.333, 3254, -130, 3252, -109.333, 3192, -106, 3182.67, -90.3333, 3179.67, -48.3333, 3172, -20.3333, 3175.67, -8.33334, 3236.67, -21.6667, 3269, -17.6667, 3276.67, -0.666656, 3215.33, -2, 3183.67, 4.33334, 3173, 8.66666, 3177.67, 37.3333, 3181.67, 60, 3171.33, 96, 3159.67, 109.667, 3151, 49, 3155.33, -11, 3158.33, -60.3333, 3160.67, -114, 3148, -181.333, 3157.67, -224.667, 3152, -275, 3137.33, -322.667, 3137.67, -373.667, 3138.33, -423.333, 3137.33, -477, 3132.33, -522, 3131.33, -544.667, 3119.67, -567.333, 3082.67, -569.667)
 one_way_collision = true
 
-[node name="TopLadder" type="Node2D" parent="Env/Ladder"]
+[node name="MidLadder" type="StaticBody2D" parent="Env/Ladder"]
 
-[node name="Ladder4" type="Sprite2D" parent="Env/Ladder/TopLadder"]
-position = Vector2(2042, -2041)
-texture = ExtResource("14_i4fjy")
-
-[node name="Ladder5" type="Sprite2D" parent="Env/Ladder/TopLadder"]
-position = Vector2(1988, -1994)
-texture = ExtResource("15_pt3ps")
-
-[node name="MidLadder2" type="StaticBody2D" parent="Env/Ladder"]
-
-[node name="Ladder2" type="Sprite2D" parent="Env/Ladder/MidLadder2"]
+[node name="Ladder2" type="Sprite2D" parent="Env/Ladder/MidLadder"]
 position = Vector2(1903, -865)
 texture = ExtResource("12_no8kt")
 
-[node name="Ladder3" type="Sprite2D" parent="Env/Ladder/MidLadder2"]
+[node name="Ladder3" type="Sprite2D" parent="Env/Ladder/MidLadder"]
 z_index = 5
 position = Vector2(1783, -822)
 texture = ExtResource("13_xbk3s")
 
-[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 polygon = PackedVector2Array(2618, -537.667, 2555.33, -571.333, 2558.67, -615.667, 2574.33, -616, 2594, -617, 2590, -597, 2614.67, -573.667)
 one_way_collision = true
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 polygon = PackedVector2Array(2488, -616.667, 2462.67, -624, 2444.67, -586.667, 2474, -584)
 one_way_collision = true
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 position = Vector2(7, 4.66666)
 polygon = PackedVector2Array(2378, -639.667, 2355.33, -644, 2327.33, -610.667, 2366.33, -604.667)
 one_way_collision = true
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 position = Vector2(7, 4.66666)
 polygon = PackedVector2Array(2284.33, -666, 2258, -673.667, 2228, -635, 2252.33, -626.667)
 one_way_collision = true
 
-[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 polygon = PackedVector2Array(2133.67, -678, 2114.33, -685.333, 2087, -639.667, 2106.67, -637)
 one_way_collision = true
 
-[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 polygon = PackedVector2Array(1998, -710.667, 1971.67, -717.667, 1942, -681.333, 1958.67, -671)
 one_way_collision = true
 
-[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 polygon = PackedVector2Array(1867, -742.667, 1850.67, -746.333, 1824.33, -714.667)
 one_way_collision = true
 
-[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 polygon = PackedVector2Array(1776.67, -775.667, 1752.33, -782, 1731.33, -742)
 one_way_collision = true
 
-[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
 polygon = PackedVector2Array(1647.67, -826.333, 1621, -830.333, 1608.67, -798.333)
 one_way_collision = true
 
-[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1537.67, -862.667, 1516.67, -871, 1494.33, -832)
-one_way_collision = true
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder"]
+polygon = PackedVector2Array(1424, -897, 1219.33, -991.667, 1128, -1065, 1023.33, -1117, 934, -1040.67, 717, -1003.33, 419.667, -1005.67, 291.667, -1208, 437.333, -1212, 591.667, -1189.33, 788, -1172.67, 930.667, -1169, 1024, -1128.33, 1084.67, -1099.67, 1165, -1049.67, 1234.33, -1005.33, 1374.33, -933, 1418.33, -919, 1446, -900, 1520.33, -868.667, 1496.67, -859.667)
 
-[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="Env/Ladder/MidLadder2"]
-polygon = PackedVector2Array(1424, -897, 1219.33, -991.667, 1128, -1065, 1023.33, -1117, 934, -1040.67, 717, -1003.33, 419.667, -1005.67, 291.667, -1208, 437.333, -1212, 591.667, -1189.33, 788, -1172.67, 930.667, -1169, 1024, -1128.33, 1084.67, -1099.67, 1165, -1049.67, 1234.33, -1005.33, 1374.33, -933, 1418.33, -919, 1446, -900, 1473.67, -881.667, 1458, -875.667)
+[node name="TopLadder" type="StaticBody2D" parent="Env/Ladder"]
+position = Vector2(2042, -2041)
+
+[node name="Ladder4" type="Sprite2D" parent="Env/Ladder/TopLadder"]
+texture = ExtResource("14_i4fjy")
+
+[node name="Ladder5" type="Sprite2D" parent="Env/Ladder/TopLadder"]
+position = Vector2(-54, 47)
+texture = ExtResource("15_pt3ps")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/Ladder/TopLadder"]
+polygon = PackedVector2Array(328.667, 316, 333.333, 375, 221.667, 245.333, 101.667, 132.667, -22.6666, 23, -180.667, -84.6665, -347, -174, -519.333, -253, -414.667, -221.333, -394.667, -228, -384.333, -221.333, -387, -207.333, -338.667, -179.667, -316.667, -192, -306.333, -187.333, -314.667, -171, -228.333, -117.667, -210, -133, -183.667, -117, -194, -103.667, -71.3333, -35, -54.3333, -49.3333, -36, -36, -49.3333, -16, 8.66675, 26.6667, 32.3335, 21, 47.6667, 34.3335, 31.3335, 49.6667, 95, 100, 120, 83, 134, 98, 113.333, 119, 167.333, 158.667, 188.333, 148.333, 212.333, 173.333, 196.667, 184.667, 242.667, 223.333, 260.667, 209, 285.667, 238, 267, 249.667, 299.333, 295.667, 314, 278, 339, 302)
+one_way_collision = true
 
 [node name="EndLadder" type="StaticBody2D" parent="Env/Ladder"]
 
@@ -237,6 +246,16 @@ texture = ExtResource("17_axeuq")
 
 [node name="LadderEnd" type="CollisionPolygon2D" parent="Env/Ladder/EndLadder"]
 polygon = PackedVector2Array(466.333, -3034, 251.333, -2974.67, 227.333, -3026.67, 258.667, -3234.33, 290.333, -3440, 305, -3706.67, 338.333, -3966.33, 312.333, -4123.67, 333, -4287, 353.333, -4240.67, 433, -4244.33, 353.333, -4214.67, 340.333, -4129.33, 447.667, -4131.33, 336.667, -4099.67, 351.333, -3997.67, 464.333, -4003.33, 453.333, -3981, 360.667, -3970, 357, -3742, 414.333, -3762.33, 468.333, -3736.33, 347.667, -3710.33, 323.667, -3456.67, 418, -3477, 468.333, -3473.33, 509, -3443.67, 327.333, -3421.33, 292, -3217.33, 392.333, -3247, 486.667, -3252.67, 475.667, -3226.67, 286.667, -3178.67, 257, -3004.33, 353.333, -3036)
+one_way_collision = true
+
+[node name="DeadLadder" type="StaticBody2D" parent="Env/Ladder"]
+
+[node name="Ladder-top" type="Sprite2D" parent="Env/Ladder/DeadLadder"]
+position = Vector2(2792, -2133.67)
+texture = ExtResource("19_no8kt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/Ladder/DeadLadder"]
+polygon = PackedVector2Array(2755.33, -1765.67, 2719.67, -1776.67, 2730, -1938.67, 2716.67, -2048, 2708, -2122.67, 2715, -2164.33, 2715, -2268, 2704, -2328.67, 2702.33, -2462.33, 2680.33, -2596.67, 2719.67, -2493, 2726.67, -2433, 2794.33, -2445.67, 2732.33, -2417.33, 2732.33, -2309, 2801.33, -2331.67, 2733, -2289.33, 2737, -2196.67, 2803.67, -2206.67, 2741.67, -2166.67, 2728.33, -2110, 2748, -2059, 2817, -2077, 2752, -2039.33, 2753.33, -1975.67, 2764.33, -1935.67, 2828, -1949.67, 2752.67, -1918.33, 2747.33, -1833.33, 2827.33, -1843, 2748.67, -1820)
 one_way_collision = true
 
 [node name="Triggers" type="Node2D" parent="."]
@@ -269,7 +288,6 @@ position = Vector2(-21, 120)
 shape = SubResource("RectangleShape2D_0pcbe")
 
 [node name="Timer" type="Timer" parent="Triggers/CameraToCeiling"]
-wait_time = 2.0
 one_shot = true
 
 [node name="CameraWide3" parent="Triggers" node_paths=PackedStringArray("camera_2d", "player") instance=ExtResource("17_t2t4p")]
@@ -294,7 +312,6 @@ shape = SubResource("RectangleShape2D_axeuq")
 position = Vector2(9682, -683)
 script = ExtResource("22_pyn1s")
 player = NodePath("../../Player")
-player_jump = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/LeapOfFaith"]
 position = Vector2(-9, -461)

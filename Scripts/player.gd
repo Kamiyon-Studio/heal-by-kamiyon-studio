@@ -14,13 +14,15 @@ extends CharacterBody2D
 @export var min_scale: float = 3.0
 @export var max_scale: float = 7.0
 
+@onready var inventory: CanvasLayer = $Inventory
+var inventory_open := false
 
 const MAX_SPEED: float = 700.0
 const ACCELERATION: float = 10.0
 const FRICTION: float = 7.0
 const ROTATION_SPEED: float = 7.0
 
-var large_to_small: bool = false
+var large_to_small: bool = true
 var can_move: bool = true
 
 
@@ -28,6 +30,7 @@ var can_move: bool = true
 func _physics_process(delta: float) -> void:
 	if can_move:
 		#print("Player scale:", self.scale)
+		#print("Player location:", self.global_position)
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -55,8 +58,13 @@ func _physics_process(delta: float) -> void:
 
 # change player size
 func _process(_delta: float) -> void:
-	update_scale_based_on_position()
-
+	if Input.is_action_just_pressed("inventory"):
+		toggle_inventory()
+	
+	if large_to_small:
+		update_scale_based_on_position()
+	else:
+		scale = Vector2(3.0, 3.0)
 	#if not large_to_small:
 		#var t: float = clamp((global_position.x - start_x) / (end_x - start_x), 0.0, 1.0)
 		#scale = start_scale.lerp(end_scale, t)
@@ -70,12 +78,21 @@ func inverse_lerp(a: float, b: float, v: float) -> float:
 	return clamp((v - a) / (b - a), 0.0, 1.0)
 	
 func update_scale_based_on_position():
-	var pos: Vector2 = global_position
+	var pos_x: float = global_position.x
 
-	var x_factor: float = inverse_lerp(min_position.x, max_position.x, pos.x)
-	var y_factor: float = inverse_lerp(min_position.y, max_position.y, pos.y)
+	# Map x from 200 (big) to 10000 (small)
+	var x_factor: float = inverse_lerp(200.0, 10000.0, pos_x)
+	var reversed_factor: float = 1.0 - x_factor  # So 200 = 1.0, 10000 = 0.0
 
-	var blend: float = clamp(1.0 - (x_factor + y_factor) * 0.5, 0.0, 1.0)
-	var scale_value: float = lerp(min_scale, max_scale, blend)
-
+	var scale_value: float = lerp(min_scale, max_scale, reversed_factor)
 	scale = Vector2(scale_value, scale_value)
+
+
+
+func toggle_inventory() -> void:
+	inventory_open = !inventory_open
+	inventory.visible = inventory_open
+	if inventory_open:
+		print("Inventory opened.")
+	else:
+		print("Inventory closed.")
